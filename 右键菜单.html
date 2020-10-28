@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            width: 60px;
+            height: 87px;
+            background-color: darkgray;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            display: none;
+        }
+        li{
+            width: 60px;
+            list-style: none;
+            background-color: rgb(199, 196, 196);
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>复制</li>
+        <li>粘贴</li>
+        <li>剪切</li>
+    </ul>
+
+
+    <script>
+        // 获取ul
+        var ul = document.querySelector('ul');
+        // 获取li
+        var li = document.getElementsByTagName('li');
+        document.oncontextmenu = function(e){
+            e = e || window.event;
+            e.preventDefault() ? e.preventDefault : (returnValue = false);
+            // 获取鼠标右键按下的位置
+            ul.style.top = parseInt(e.clientY) + 'px';
+            ul.style.left = parseInt(e.clientX) + 'px';
+            ul.style.display = "block";
+        }
+
+        document.onclick = function(){
+            ul.style.display = "none";
+        }
+
+        for (let i = 0; i < li.length; i++) {
+            li[i].onmouseover = function(){
+                li[i].style.background = "pink";
+            }
+            li[i].onmouseout = function(){
+                li[i].style.background = "";
+            }
+        }
+
+    </script>
+</body>
+</html>

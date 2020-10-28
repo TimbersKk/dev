@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="div1" style="width: 200px; height: 200px; background-color: blue; font-size: 30px; text-align: center; line-height: 200px;">hello</div>
+
+<!-- 
+    <script>
+    //     var ele = document.getElementById('div1');
+    //     var arr = ele.attributes;
+    //     console.log(arr);
+    //     console.log(arr[0]);
+    //     console.log(arr[1]);
+    //     console.log(arr[2]);
+    //     console.log(ele.attributes[1]);
+
+    //     console.log(ele.getAttribute('id'));
+    //     console.log(ele.getAttribute('title'));
+    //     console.log(ele.getAttribute('myattr'));
+    //     console.log(ele.id);
+        
+
+    //     console.log(div1.id);
+    //     console.log(div1.title);
+    //     console.log(div1.myattr);//不行
+    //     console.log(div1["id"]);
+    //     console.log(div1["title"]);
+
+    //    var myattr = ele.getAttributeNode('myattr');
+    //    console.log(myattr.nodeValue);
+    </script> -->
+<!-- 
+    <script>
+        var ele = document.getElementById('div1');
+        var div1 = ele.getAttribute('id');
+        ele.setAttribute('id','div2');
+        ele.setAttribute('myattr','handsome');
+
+        var div2 = ele.getAttributeNode('class');
+        div2.nodeValue = "str2";
+
+        ele.className = "str3";
+        ele["className"] = "str4";
+        console.log(ele);
+    </script> -->
+
+   <!-- <script>
+        var ul = document.querySelector('ul');
+        console.log(ul.childNodes);
+        console.log(ul.children);
+        console.log('--------------------');
+        console.log(ul.firstChild);
+        console.log(ul.firstElementChild);
+        console.log('--------------------');
+        console.log(ul.lastChild);
+        console.log(ul.lastElementChild);
+        console.log('--------------------');
+        console.log(ul.parentNode);
+        console.log(ul.parentElement);
+        console.log('--------------------');
+        console.log(ul.nextSibling);
+        console.log(ul.nextElementSibling);
+        console.log('--------------------');
+        console.log(ul.previousSibling);
+        console.log(ul.previousElementSibling);
+         -->
+   
+    <!-- </script> --> 
+<script>
+    var div1 = document.getElementById('div1');
+    console.log(div1.style.cssText);
+    div1.style.cssText = 'width: 200px; height: 200px; background-color: pink; font-size: 30px; text-align: center; line-height: 200px';
+    console.log(div1.style.getPropertyValue('width'));
+    div1.style.setProperty('width','500px');
+    div1.style.removeProperty('text-align');
+</script>
+</body>
+</html>

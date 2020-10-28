@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .homepage{
+            width: 1520px;
+            height: 700px;
+            background-color: rgb(0, 0, 0, .5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .homepage>div{
+            width: 400px;
+            height: 400px;
+            background-color: rosybrown;
+            border-radius: 50%;
+        }
+        .homepage h1{
+            color: rgb(253, 36, 7);
+            font-size: 150px;
+            text-align: center;
+            line-height: 400px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="homepage">
+        <div id="div1"><h1 id="h1text"></h1></div>
+    </div>
+    <script>
+        var time = 5;
+        var backgroundArr = ['blue','green','red','pink'];
+        var h1textArr = ['white','darkgary','orange','black'];
+        var div1 = document.getElementById('div1');
+        var h1text = document.getElementById('h1text');
+        var timer = setInterval(jumper,1000);
+
+        
+        function jumper(){
+            div1.style.background = backgroundArr[~~(Math.random()*backgroundArr.length)];
+            h1text.style.color = h1textArr[~~(Math.random()*h1textArr.length)];
+            h1text.innerHTML = time;
+            if(time === 0){
+                clearInterval(timer);     
+                document.location.href = "file:///C:/Users/TimbersKk_0vo/Desktop/%E6%97%B6%E5%B0%9A%E7%A9%BF%E6%90%AD%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1/%E6%BA%90%E7%A0%81/index.html";
+            }
+            time--;
+        }
+    </script>
+</body>
+</html>

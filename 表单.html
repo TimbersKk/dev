@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Document</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 150px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        #list>li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+		<ul id="list">
+			<li><span>1.</span><a href="">李嘉诚耗资42亿港元抄底自家长实地产 传达何种信息？</a>
+			<li><span>3.</span><a href="">美媒称美国务院雇员因“向中国提供情报”被起诉</a>
+			<li><span>4.</span><a href="">日本回应放行“台湾国”护照 称只是个案 正在调查</a>
+			<li><span>5.</span><a href="">香港“占中”9人今日受审 罪名成立最高可判7年</a>
+			<li><span>6.</span><a href="">广州楼市调控丢“王炸” 12天“炸”出新地王</a>
+			<li><span>7.</span><a href="">外媒：特朗普撕毁巴黎协定 将美国带回“煤炭时代”</a>
+			<li><span>8.</span><a href="">最高检：年底前，将全面向公安派出所派驻“检察院”</a>
+			<li><span>9.</span><a href="">日军方成立“海军陆战队” 要在钓鱼岛搞事？</a>
+			<li><span>10.</span><a href="">韩星州民众与警方对峙 阻拦"萨德"施工用车入场</a>
+            <li><span>11.</span><a href="">成都出新规:禁止占用城市道路开展棋牌娱乐活动</a>
+		</ul>
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        
+        var height = 10;
+        setInterval(time,100);
+
+        function time(){
+            box.scrollTop = height + 'px';
+            height += 10;
+        }
+
+        box.className = 'AAA'
+        box.tagName = 'NNN'
+    </script>
+</body>
+</html>

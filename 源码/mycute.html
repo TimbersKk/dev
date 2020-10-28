@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+        #div1 > input{
+            width: 50px;
+            height: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <span>我是不是你的小可爱？</span>
+        <input type="button" value="是" onclick="YES(this)">
+        <input type="button" value="否" onmouseover="No(this)">
+
+        <script>
+            var div1 = document.getElementById('div1');
+
+            function YES(){
+                document.location.href = "file:///C:/Users/TimbersKk_0vo/Desktop/%E6%97%B6%E5%B0%9A%E7%A9%BF%E6%90%AD%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1/%E6%BA%90%E7%A0%81/mycute2.html";
+            }
+
+            
+            function No(){
+                var randomTop = ~~(Math.random()*(300));
+                var randomleft = ~~(Math.random()*(300));
+                div1.style.top = randomTop +"px";
+                div1.style.left = randomleft +"px";
+            }
+        </script>
+    </div>
+</body>
+</html>

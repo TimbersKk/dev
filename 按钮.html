@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+	</style>
+</head>
+<body>
+	爱好
+	<input type="checkbox" name="hooby" id="">篮球
+	<input type="checkbox" name="hooby" id="">lol
+	<input type="checkbox" name="hooby" id="">下棋
+	<input type="checkbox" name="hooby" id="">跳绳
+	<input type="checkbox" name="hooby" id="">吃
+	<br/>
+	<br/>
+	<input type="radio" name="" id="btn1">全选
+	<input type="radio" name="" id="btn2">反选
+	<input type="radio" name="" id="btn3">不选
+
+
+	<script>
+		var hooby = document.getElementsByName('hooby');
+		var btn1 = document.getElementById('btn1');
+		var btn2 = document.getElementById('btn2');
+		var btn3 = document.getElementById('btn3');
+
+		btn1.addEventListener("click",fn);
+		function fn(){
+			for (let i = 0; i < hooby.length; i++) {
+				hooby[i].checked = true;
+			}
+			btn3.checked = false;
+			btn2.checked = false;
+		}
+
+
+		btn2.addEventListener("click",fn1);
+		function fn1(){
+			for (let i = 0; i < hooby.length; i++) {
+				hooby[i].checked = !hooby[i].checked;
+			}
+			btn1.checked = false;
+			btn3.checked = false;
+		}
+
+
+		btn3.onclick = function(){
+			for (let  i= 0;  i< hooby.length; i++) {
+				hooby[i].checked = false;
+			}
+			btn1.checked = false;
+			btn2.checked = false;statusbar
+		}
+
+		    for (let i = 0; i < hooby.length; i++) {
+					hooby[i].onclick = function () {
+						if (![hooby].checked) {
+							btn1.checked = false;
+						}
+						var counter = 0;
+						for (let j = 0; j < hooby.length; j++) {
+							if (hooby[j].checked) {
+								counter++;
+							}
+						}
+
+						if (counter == hooby.length) {
+							if (!btn1.checked) {
+								btn1.checked = true;
+							}
+						}
+					}
+				}
+
+	</script>
+</body>
+</html>

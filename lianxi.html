@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /*     #div1{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+
+        #div2{
+            width: 1px;
+            height: 2000px;
+            background-color: darkgray;
+        } */
+    </style>
+</head>
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <img src="../170431006-皇润东.png" alt="" id="img"> 
+    <!-- <div id="div1"></div>
+    <div id="div2"></div>
+
+    <img src="../170431006-皇润东.png" alt="" id="img"> -->
+
+    <!-- <script>
+        var div1 = document.getElementById("div1");
+        div1.onclick = function(e){
+            console.log(e.button);
+        }
+
+        div1.oncontextmenu = function(e){
+            console.log(e.button);
+        }
+
+        document.body.mousewheel = function(){
+            console.log(e.mousewheel);     
+        }
+    </script> -->
+    <!-- <script>
+        var img = document.getElementById("img");
+
+        img.addEventListener("error",function(){
+            console.log("加载失败");
+        },false);
+
+        img.addEventListener("load",function(){
+            console.log("加载完成");
+        },false);
+
+        img.addEventListener("DOMContentLoaded",function(){
+            console.log(DoMContentLoded);
+        },false);
+
+        document.addEventListener("readystatechange",function(){
+            console.log(document.readyState);
+        },false);
+
+
+    </script> -->
+    <script>
+        var ul = document.createElement("ul");
+        var li = document.createElement("li");
+
+        document.body.appendChild(ul);
+        li.innerHTML = "我是li";
+        ul.appendChild(li);
+
+        ul.onclick = function(e){
+            e = e || window.event;
+            console.log(e.target.innerHTML);
+        }
+
+
+        var ul1 = document.getElementById("ul1");
+        var li1 = document.querySelectorAll("li");
+
+        for (let i = 0; i < li1.length; i++) {
+            li1[i].onclick = function(e){
+                e =e || window.event;
+                console.log(this.innerHTML);
+            }
+        }
+
+
+            var imgs = document.querySelectorAll('img');
+            console.log('状态=' + document.readyState);
+            imgs.onlsoad = function () {
+                console.log('第一个图片加载完成')
+            };
+            imgs.onerror = function () {
+                console.log('第一个图加载失败')
+            };
+            document.addEventListener('DOMContentLoaded', function () {
+                console.log('dom数ok')
+            })
+            document.addEventListener('readystatechange', function () {
+                console.log('状态=' + document.readyState)
+            })
+            window.onload = function () {
+                console.log('所有页面加载完成')
+            }
+    </script>
+</body>
+</html>

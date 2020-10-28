@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 0px;
+            background-color: brown;
+            position: fixed;
+            bottom: 4px;
+            right: 4px;       
+        }
+        #closer{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: cadetblue;
+            text-align: center;
+            line-height: 40px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="closer">X</div>
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        var closer = document.getElementById("closer");
+
+
+        closer.onclick = function(){
+            box.style.display = "none";
+        }
+
+        var height = 0;
+        var timer = setInterval(time, 100);
+        function time() {
+            box.style.height = 5 * height + "px";
+            height += 10;
+            if (height >= 60) {
+                clearInterval(timer);
+            }
+        }
+
+        //  if(height >= 20){
+        //      clearInterval(timer);
+        //  }
+    </script>
+</body>
+</html>

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     #green{
+         width: 300px;
+         height: 300px;
+         background-color: green;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin: 0 auto;
+         border-radius: 50%;
+     }
+     #blue{
+         width: 200px;
+         height: 200px;
+         background-color: blue;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 50%;
+    }
+     #red{
+         width: 100px;
+         height: 100px;
+         background-color: red;
+         border-radius: 50%;
+     }
+    </style>
+</head>
+<body>
+    <div id="green">
+        <div id="blue">
+            <div id="red"></div>
+        </div>
+    </div>
+    <!-- <script>
+       /*  // 
+        function isHappen(percent){
+            if(percent === 0)
+            return false;
+            if(percent >= 1)
+            return true;
+        return Math.random() < percent;
+        }
+        // 
+        function fish(n){
+            if (n <= 0)
+                 return 0;
+            const MAX = 6;
+            const MIN = 1;
+            const ISPERCENT = 0.3;
+            let weight = 0;
+            for(var i = 0; i <= n; i++){
+                if(isHappen(ISPERCENT)){
+                    weight += ~~(Math.random()*(MAX - MIN) + MIN);
+                }
+            } 
+            return weight;
+        }
+        console.log(fish(100)); */
+
+        // 
+        /* function isHappen(percent){
+            if(percent === 0)
+            return false;
+            if(percent >= 1)
+            return true;
+        return Math.random() < percent;
+        }
+
+        // 获得伤害的随机浮动区间
+        function randomAtk(){
+            const MAX = 5;
+            const MIN = -6;
+            return ~~(Math.random()*(MAX - MIN) + MIN);
+        }
+        var aName = "阿基里斯";
+        var aAtk = 50;
+        var aHp = 1000;
+        var aCritical = 0.3;
+
+
+        var hName = "赫克托";
+        var hAtk = 45;
+        var hHp = 1000;
+        var hCritical = 0.5;
+
+        while(true){
+            // 赫克托攻击阿基里斯
+            var damage = hAtk + randomAtk();
+            if(isHappen(hCritical)){
+            // 暴击伤害
+                damage *= 2;
+                damage = damage << 1;
+            }
+            // 减血
+            aHp -= damage;
+            if(aHp < 0)
+               aHp = 0;
+
+            console.log(`${hName}攻击了${aName}。造成了${damage}点伤害。${aName}剩余血量为:${aHp}`);
+           
+            if(aHp == 0){
+                // 结束循环
+                break;
+            }
+
+
+            // 阿基里斯攻击赫克托
+            var damage = aAtk + randomAtk();
+            if(isHappen(aCritical)){
+            // 暴击伤害
+                damage *= 2;
+                damage = damage << 1;
+            }
+            // 减血
+            hHp -= damage;
+            if(hHp < 0)
+               hHp = 0;
+
+            console.log(`${aName}攻击了${hName}。造成了${damage}点伤害。${hName}剩余血量为:${hHp}`);
+           
+            if(hHp == 0){
+                // 结束循环
+                break;
+            }
+        }
+
+        // 战斗结果
+        if(aHp == 0){
+            console.log(`${hName}胜利`);
+        }
+        else{
+            console.log(`${aName}胜利`);
+        } */
+
+      /*  var score = [];
+       var sum = 0;
+       var avg = 0;
+       const COUNt = 10;
+       const MAX = 101;
+       const MIN = 1;
+       for(let i = 0; i < COUNt; i++){
+           var score = ~~(Math.random()*(MAX - MIN) + MIN);
+           score = score[i];
+       }
+       for (let i = 0; i < COUNt; i++){
+           sum += score[i];
+       }
+       avg = sum/COUNt;
+       console.log(sum);
+       console.log(avg);
+       for(let i = 0; i < COUNt; i++){
+           console.log(`第${COUNt}的同学的成绩为${sum}`);
+       } */
+
+    //     //练习
+    //    function createArr(len,MAX,MIN){
+    //        var arr = [];
+    //        for (let i = 0; i < arr.len; i++) {
+    //             arr[i] = ~~(Math.random()*(MAX - MIN) + MIN);
+    //        }
+    //        return arr;
+    //    }
+    //    console.log(createArr(20,10,0));
+       
+    // //    function MAXvalue(){
+    // //        var MAX = 
+    // //    }
+
+
+    // 作业1.定义一个包含10个元素的数组，通过键盘为其赋值，求数组元素的和、平均值
+    // var arr = [];
+    // arr.length = 10;
+    // var sum = 0;
+    // for (let i = 0; i < arr.length; i++) {
+    //    arr[i] = parseInt(prompt(`请输入第${i+1}个数`));
+    //    sum += arr[i];
+    // }
+    // var mean = sum/arr.length;
+    // console.log(arr);
+    // console.log('数组元素的和为' + sum);
+    // console.log('数组元素的平均值为' + mean);
+
+    // // 2.定义函数实现，对指定数组中大于5的元素的值占数组元素的百分率
+    // var newArr = [];
+    // function probability(len,MAX,MIN){
+    //     // 遍历
+    //     for (let i = 0; i < len; i++) {
+    //         newArr[i] = ~~(Math.random()*(MAX - MIN) + MIN);
+    //     }
+    //     return newArr;
+    // }
+    // console.log(probability(10,10,0));
+    
+    // function countvalue(newArr) {
+    //         var counter = 0;
+    //         for (let j = 0; j < newArr.length; j++) {
+    //             if (newArr[j] > 5) {
+    //                 counter++;
+    //             }
+    //         }
+    //         return counter;
+    //     }
+    // console.log(countvalue(newArr));
+    // console.log(`数组中元素大于5的几率为${(countvalue(newArr)/newArr.length)*100}%`)
+
+    // var arr = [1,2,3,45,5,6];
+    // // arr.push(8);
+    // // console.log(arr);
+    // delete arr[arr.length - 1];
+    // console.log(arr);
+    // arr.pop();
+    // arr.unshift(5);
+    // console.log(arr);
+    // arr.shift();
+    // console.log(arr);
+    // 转换字符串
+    // console.log(arr.join());\
+    // 查找indexOf(key,[fromindex])
+    // console.log(arr.indexOf(3,[5]));
+    // console.log(arr.indexOf(3));
+    // console.log(arr.indexOf(10));
+    
+    
+    // function countvalue(arr,key){
+    //     // 计数器
+    //     var counter = 0;
+    //     var fromindex = 0;
+    //     while(true){
+    //         var index = arr.indexOf(key,fromindex);
+    //         if(index >= 0){
+    //             counter++;
+    //             fromindex = index + 1;
+    //             continue;
+    //         }
+    //         break;
+    //     }
+    //     return counter;
+    // }
+    // var arr = [1,1,1,1,2,2,2,3,3];
+    // console.log(countvalue(arr,3));
+    
+    // slic取出数组指定元素 组成新的数组；slice（start，end) end可省略；
+    /* var arr = [1,2,3,45,5,6];
+    var newArr = arr.slice(2,5);
+    console.log(newArr); */
+
+    // sort 对当前数组对象进行升序排序 返回值：被排序的数组
+    // var arr = ['4','2','3'];
+    // var newArr = arr.sort();
+    // console.log(newArr);
+    
+    // var arr = [];
+    // function probability(len,MAX,MIN){
+    //     // 遍历
+    //     for (let i = 0; i < len; i++) {
+    //         arr[i] = ~~(Math.random()*(MAX - MIN) + MIN);
+    //     }
+    //     return arr;
+    // }
+    // console.log(probability(20,40,10));
+
+    // var newArr = arr.map(function(currentValue,index){
+    //     return currentValue * 2;
+    // });
+    // console.log(newArr);
+
+    // var newArr2 = newArr.filter(function(currentValue1,value1){
+    //     return currentValue1 >= 60 && currentValue1 <=80;
+    // });
+    // console.log(newArr2);
+     
+    // var newArr3 = newArr2.findIndex(function(currentValue2,value2){
+    //     return currentValue2 == 70;
+    // });
+    // console.log(newArr3);
+    // var arr = [
+    //     [[1,2,3],[4,5,6,],[7,8,9]],
+    //     [[11,22,33],[44]]
+    // ];
+    // for (let i = 0; i < arr.length; i++) {
+    //     for (let j = 0; j < arr[i].length; j++) {
+    //        for (let k = 0; k < arr[i][j].length; k++) {
+    //            console.log(arr[i][j][k]);
+    //        }
+    //     }
+    // }
+
+    // // 作业1.1：得到一个学生的分数数组。元素若干个。使用数组的sort 方法分别进行升序和降序排序。
+    // var stuScore = [];
+    // function score(len,max,min){
+    //     if(len === 0){
+    //         return stuScore;
+    //     }
+    //     for (let i = 0; i <len; i++) {
+    //         stuScore[i] = ~~(Math.random()*(max - min) + min);
+    //     }
+    //     return stuScore;
+    // }
+    // var MAX = ~~(Math.random()*(101 - 50) + 50);
+    // var MIN = ~~(Math.random()*(50 - 1) + 1);
+    // var len = ~~(Math.random()*(31 - 10) + 10);
+    // console.log(score(len,MAX,MIN));
+
+
+    // var newArr = stuScore.sort();
+    // console.log(newArr);//升序
+
+    // var newArr2 = newArr;
+    // newArr2.sort(function newArr2(num1,num2){
+    //     return num2 - num1;
+    // });
+    // console.log(newArr);//降序
+   
+
+    // //2：对上面的数组使用冒泡排序进行升序和降序排列。
+    
+    // function bubbling(arr) {
+    //     if (!Array.isArray(arr))
+    //         return;
+    //     const LEN = arr.length;
+    //     if (LEN === 0)
+    //         return;
+    //     for (let i = 0; i < LEN - 1; i++) {
+    //         for (let j = 0; j < LEN - 1 - i; j++) {
+    //             if(arr[j] > arr[j+1]){
+    //                 arr[j] = arr[j] ^ arr[j+1];
+    //                 arr[j+1] = arr[j] ^ arr[j+1];
+    //                 arr[j] = arr[j] ^ arr[j+1];
+    //             }
+    //         }
+    //     }
+    // }
+    // bubbling(stuScore);
+    // console.log(stuScore);//升序
+
+    // function bubbling2(arr) {
+    //     if (!Array.isArray(arr))
+    //         return;
+    //     const LEN = arr.length;
+    //     if (LEN === 0)
+    //         return;
+    //     for (let i = 0; i < LEN - 1; i++) {
+    //         for (let j = 0; j < LEN - 1 - i; j++) {
+    //             if(arr[j] < arr[j+1]){
+    //                 arr[j] = arr[j] ^ arr[j+1];
+    //                 arr[j+1] = arr[j] ^ arr[j+1];
+    //                 arr[j] = arr[j] ^ arr[j+1];
+    //             }
+    //         }
+    //     }
+    // }
+    // bubbling2(stuScore);
+    // console.log(stuScore);//降序
+
+
+//     var stuScore = [];
+//     function score(len,max,min){
+//         if(len === 0){
+//             return stuScore;
+//         }
+//         for (let i = 0; i <len; i++) {
+//             stuScore[i] = ~~(Math.random()*(max - min) + min);
+//         }
+//         return stuScore;
+//     }
+//     var MAX = ~~(Math.random()*(101 - 50) + 50);
+//     var MIN = ~~(Math.random()*(50 - 1) + 1);
+//     var len = ~~(Math.random()*(31 - 10) + 10);
+//     console.log(score(len,MAX,MIN));
+
+//     function selectionSort(arr){
+//         if(!Array.isArray(arr)){
+//             return;
+//         }
+//         const len = arr.length;
+//         if(len === 0){
+//             return;
+//         }
+//         for (let i = 0; i < len - 1; i++) {
+//             let index = i;
+//             for (let j = i + 1; j < len; j++) {
+//                 if(arr[j] < arr[index]){
+//                     index = j;
+//                 }
+//             }
+//             if(i !== index){
+//                 var temp = arr[i];
+//                 arr[i] = arr[index];
+//                 arr[index] = temp;
+//             }
+//         }
+//     }
+// selectionSort(stuScore);
+// console.log(stuScore);
+
+
+// // 2
+// var obj = {
+//     name:'皇润东',
+//     sex:'男',
+//     age:22,
+//     bwh:[170,80,100],
+//     menfolk:true,
+//     eat: function(){
+//         console.log('就是爱吃');
+//     },
+//     // work:{},
+// }
+// console.log(typeof(obj.name));
+// console.log(typeof(obj.sex));
+// console.log(typeof(obj.age));
+// console.log(typeof(obj.bwh));
+// console.log(typeof(obj.menfolk));
+// console.log(typeof(obj.work));
+// console.log(typeof(obj.eat));
+
+
+// var date = new Date();
+//     var year = date.getFullYear();
+//     var month = date.getMonth();
+//     var week = date.getDay();
+//     var day = date.getDate();
+//     var hour = date.getHours();
+//     var minute = date.getMinutes();
+//     var second = date.getSeconds();
+//     function weeks(week){
+//         var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+//         return arr[week];
+//     }
+//     function monthes(month){
+//         var arr = [1,2,3,4,5,6,7,8,9,10,11,12];
+//         return arr[month];
+//     }
+//     console.log(`${year}年${monthes(month)}月${day}日${weeks(week)}${hour}时${minute}分${second}秒`);
+    
+
+
+//     // 练习二
+//     var nowdate = new Date();
+//     var newYear = new Date('2021-12-02');
+//     var millis = newYear - nowdate ;
+//     var daymillis = 60 * 24 * 60 * 100;
+//     console.log(millis / daymillis);
+
+
+//     // 作业
+//     var numberArr = [];
+//     var uppercaseString = [];
+//     var lowercaseString = [];
+//     // 数字
+//     function number(len){
+//         if(len == 0){
+//             return numberArr;
+//         }
+//         for (let i = 0; i <= len; i++) {
+//             numberArr[i] = ~~(Math.random()*(10 - 0) + 0) ;
+//         }
+//         return numberArr;
+//     }
+//     number(9);
+//     console.log(numberArr);
+
+//     // 大写字母
+//     function uppercase(len){
+//         if(len === 0){
+//             return uppercaseString;
+//         }
+//         for (let i = 0; i < len; i++) {
+//            var stringArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//            uppercaseString[i] = stringArr[ ~~(Math.random()*(91 - 65) + 65) - 65];
+//         }
+//         return uppercaseString;
+//     }
+//     uppercase(24);
+//     console.log(uppercaseString);
+
+//     // 小写字母  
+//     function lowercase(len){
+//         if(len === 0){
+//             return lowercaseString;
+//         }
+//         for (let i = 0; i < len; i++) {
+//            var stringArr = "abcdefghijklmnopqrstuvwxyz";
+//            lowercaseString[i] = stringArr[ ~~(Math.random()*(123 - 97) + 97) - 97];
+//         }
+//         return lowercaseString;
+//     }
+//     lowercase(24);
+//     console.log(lowercaseString);
+
+//     // 整体数组
+//     var authcodeArr = [];
+//     for (let i = 0; i < 24; i++) {
+//         authcodeArr.push(lowercaseString[i]);
+//         authcodeArr.push(uppercaseString[i]);
+//         if(i <= 9 ){
+//             authcodeArr.push(numberArr[i]);
+//         }
+//     }
+//     console.log(authcodeArr);
+
+//     // 验证码
+//     var authcode = [];
+//     function auth(len){
+//         if(len === 0){
+//             return authcode;
+//         }
+//         for (let i = 0; i < len; i++) {
+//            authcode[i] = authcodeArr[ ~~(Math.random()*(58 - 0) + 0)];
+//         }
+//         return authcode;
+//     }
+//     auth(5);
+//     console.log(authcode);
+
+//     console.log(`验证码为：${authcode[0]}${authcode[1]}${authcode[2]}${authcode[3]}${authcode[4]}`)
+
+
+
+    //     function counterChars(str){
+    //         var obj = {};
+    //         for (let i = 0; i< str.length; i++) {
+    //             var ch = str.charAt(i);
+    //             if(obj[ch]){
+    //                 obj[ch] = obj[ch] + 1;
+    //             }else{
+    //                 obj[ch] = 1;
+    //             }
+    //         }
+    //         return obj;
+    //     }
+    //    var char =  counterChars('acacaacacacbbbcc');
+    //    console.log(char);
+    
+
+        // var  date1 = new Date();
+        // for (let i = 0; i < 1000; i++) {
+        //    console.log('hello');
+        // }
+        // var date2 = new Date();
+        // console.log(date2 - date1);
+        
+        
+    //     var arr = [
+    //         [1,2,3],
+    //         [6,7,8],
+    //         [7,8,9],
+    //     ]
+    //     var date1 = new Date();
+    //     function selectionSort(arr,len){
+    //     for (let i = 0; i < len - 1; i++) {
+    //         for (let j = i + 1; j < len; j++) {
+    //            console.log(arr[i][j]);
+    //         }
+    //     }
+    // }
+    // selectionSort(arr,3);
+    //     var date2 = new Date();
+    //     console.log(date2 - date1);
+
+    // // 冒泡
+    // var date3 = new Date();
+    //   function bubbling(arr,LEN) {
+    //         for (let i = 0; i < LEN - 1; i++) {
+    //           for (let j = 0; j < LEN - 1 - i; j++) {
+    //             console.log(arr[i][j]);
+    //           }
+    //       }
+    //   }
+    //   bubbling(arr,3);
+    //   var date4 = new Date();
+    //   console.log(date4 - date3);
+
+// 1
+    // function invertStr(str){
+    //   var str1 =  str.split('').reverse();
+    //   return str1;
+    // }
+    // console.log(invertStr('abcdefg'));
+
+
+    // // 2
+    // var userName = prompt('请输入一个6-10位的用户名');
+    // function user(str){
+    //     if(str == ""){
+    //         console.log('用户名不能为空');
+    //     }
+    //     if(str.length < 6 || str.length  > 10){
+    //         console.log('请输入6-10个字符的用户名');
+    //     }else if(typeof(str[0]) !== Number && (typeof(str) == Number || typeof(str) == String)){
+    //         return console.log('用户名为' + str);
+    //     }
+    //     else{
+    //         return console.log('第一个字符不能为数字');
+    //     }
+    // }
+    // user(userName);
+    // var str = "http://www.baidu.com/hello.ht ;ml";
+    //     str = encodeURIComponent(str);
+    //     console.log(str);
+    //     str = decodeURIComponent(str);
+    //     console.log(str);
+
+    // 作业
+    // var facTime = new Date("1949/10/1");
+    // console.log(facTime.toLocaleString());
+    // var nowTime = new Date();
+    // console.log(nowTime.toLocaleString());
+    // var daymillis = 60 * 60* 1000 * 24;
+    // var differTime = parseInt((nowTime - facTime)/daymillis); 
+    // console.log('建国到现在经历了' + differTime + '天');
+    
+
+   
+
+    
+    
+ </script>
+ <script>
+    //  1
+     var div = document.createElement('div');
+     document.body.appendChild(div);
+     var boxStyle = document.createAttribute('style');
+     boxStyle.value = 'width: 300px; height: 500px; background-color: blue;';
+     div.setAttributeNode(boxStyle);
+     
+    //  2
+    setInterval(function(){
+        var arr = ['blue', 'red','pink', 'darkgray'];
+        var ran = ~~(Math.random()*arr.length);
+        div.style.background = arr[ran];
+    },1000);
+ </script> -->
+
+<!-- 
+<script>
+    // var time = 5;
+    // var span1 = document.getElementById('span1');
+    // var timer = setInterval(jumper,1000);
+    // function jumper(){
+    //     console.log(timer);
+    //     span1.innerHTML = '倒计时' + time;
+    //     if(time === 0){
+    //         clearInterval(timer);
+    //         document.location.href = "http://www.bilibili.com";
+    //     }
+    //     time--;
+    // }
+</script> -->
+    <!-- <script>
+        var div1 = document.getElementById('div1');
+        function getStyle(ele, cssName){
+            if(window.getComputedStyle){
+                return window.getComputedStyle(ele)[cssName];
+            }else{
+                return ele.currentStyle[cssName];
+            }
+        }
+        console.log(getStyle(div1,'height'));
+    </script> -->
+    <!-- <script>
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+        div.innerHTML = 'hello';
+        div.style.width = '200px';
+        div.style.height = '200px';
+        div.style.background = 'blue';
+
+
+
+        var txt = document.createTextNode('world');//括号里加的是文本
+        div.appendChild(txt);
+
+        //appendchild :具有移动节点的功能
+        var ul = document.querySelector('ul');
+        var li = document.getElementById('li2');
+        ul.appendChild(li2);
+
+
+        
+        //clone  克隆节点.克隆对象 cloneNode
+        var cloned = ul.cloneNode(true);
+        document.body.appendChild(cloned);
+
+        // insertbefore  将节点前面插入指定节点
+
+        li.innerHTML = 'hello';
+        div.insertBefore(li,ul);
+
+        //removechild  删除子节点 父节点.removechild（要删除的节点）
+        ul.removeChild(li);
+
+        // contains 判断是否包含了指定的节点
+        // haschildnode 判断是否有子节点  返回 true/false
+        // 
+    </script> -->
+   <!--  <script>
+        var div1 = document.getElementById('div1');
+        var span = document.querySelector('span');
+        var i = document.querySelector('i');
+        div1.replaceChild(i,span);
+        console.log(span.isEqualNode(i));
+        console.log(div1.contains(span));
+        console.log(div1.hasChildNodes());
+    </script> -->
+    <!-- <script>
+        var div1 = document.getElementById('div1');
+        var div2 = document.getElementById('div2');
+        console.log(div1.offsetParent);
+        console.log(div2.offsetParent);
+        console.log(div1.offsetTop);
+        console.log(div2.offsetLeft);
+        console.log(div1.clientTop);
+        console.log(div2.clientLeft);
+        
+
+        console.log(div1.offsetWidth);
+        console.log(div1.offsetHeight);
+        console.log(div2.offsetHeight);
+        console.log(div1.clientWidth);
+        console.log(div2.clientHeight);
+
+        var viewport_width = document.body.clientWidth;
+        var viewport_height= document.body.clientHeight;
+        console.log(viewport_height);
+        console.log(viewport_width);
+        
+    </script> -->
+   <!--  <script>
+        var h1 = document.querySelector('h1');
+        var h2 = document.querySelector('h2');
+        var h3 = document.querySelector('h3');
+
+        function printf(){
+            console.log('666');
+        }
+        function printf1(){
+            console.log('777');
+        }
+        function printf2(){
+            console.log(h3.innerHTML);
+        }
+        
+    </script> -->
+  <!--   <script>
+        var div1 = document.getElementById('div1');
+        var button = document.querySelector('button');
+        var list = document.querySelectorAll('li');
+        var h1 = document.querySelector('h1');
+        div1.onclick = function(){
+            console.log('hello');
+        }
+
+        button.onclick = del;
+        function del(){
+            div1.onclick = null;
+        }
+
+        div1.onclick[1] = function(){
+            console.log('world'); 
+            div1.onclick = null;
+        };
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].onclick = function(){
+                console.log(list[i].innerHTML);
+            }
+        }
+
+        h1["onclick"] = function(){
+            console.log('hello');
+        } -->
+    <!-- </script> -->
+
+    <!-- <script>
+        var div1 = document.getElementById('div1');
+        div1.addEventListener('mousemove',fn1,false);
+        function fn1(){
+            console.log('hello');
+        }
+        div1.addEventListener('mousemove',function(){
+            console.log('world!')
+        },false);
+
+        var button = document.querySelector('button');
+        button.removeEventListener('onlick',function(){
+            div1.removeEventListener('mousemove',fn1,false);
+        },false);
+        
+
+        var list = document.querySelectorAll('li');
+        for (let i = 0; i < list.length; i++) {
+           list[i].addEventListener('click',function(){
+               console.log(this.innerHTML);
+           },false);
+        }
+    </script> -->
+<!-- <script>
+    // function red1(e){
+    //     console.log('red');
+    //     e.stopPropagation ? e.stopPropagation() : e.cancelBubbel = true;
+    // }
+    // function green2(e){
+    //     console.log('green');
+    //     if(e.stopPropagation){
+    //         e.stopPropagation();
+    //     }else{
+    //         e.stopPropagation = true;
+    //     }
+    // }
+    // function blue3(e){
+    //     console.log('blue');
+    //     e.stopPropagation ? e.stopPropagation() : e.cancelBubbel = true;
+    // }
+
+    // var red = document.getElementById('red');
+    // var blue = document.getElementById('blue');
+    // var green = document.getElementById('green');
+
+    // var event = false;
+    // red.addEventListener('click',red1,event);
+    // green.addEventListener('click',green2,event);
+    // blue.addEventListener('click',blue3,event);
+    
+
+</script>
+<script>
+    var red1 = document.getElementById('red');
+    var green= document.getElementById('green');
+    function fn(){
+        console.log("hello");
+    }
+    addEvent(red1,'click',fn,false);
+ 
+    function removeEvent(ele,eventName,callBack,eventStream){
+        if(ele.addEventListener){
+            ele.removEventListener(eventName,callBack,eventStream);
+        }
+        else{
+            ele.attachEvent('on' + eventName,callBack);
+        }
+    }
+    function addEvent(ele,eventName,callBack,eventStream){
+        if(ele.addEventListener){
+            ele.addEventListener(eventName,callBack,eventStream);
+        }
+        else{
+            ele.detachEvent('on' + eventName,callBack);
+        }
+    }
+</script> -->
+<!-- <script>
+    var red = document.getElementById('red');
+    var green = document.getElementById('green');
+    red.onclick = function(e){
+        var e = e || window.event;
+        console.log(e);
+    }
+    green.onclick = function(e){
+        e = e ? e:window.event;  
+        console.log(e);
+    } -->
+<!-- </script> --> 
+
+<script>
+    var red  = document.getElementById('red');
+    var green  = document.getElementById('green');
+    var blue = document.getElementById("blue");
+
+    red.addEventListener("click",function(e){
+        console.log(e.eventPhase);
+    },false);
+    blue.addEventListener("click",function(e){
+        console.log(e.eventPhase);
+    },false);
+    green.addEventListener("click",function(e){
+        console.log(e.eventPhase);
+    },false);
+
+
+    red.addEventListener("click",function(e){
+        console.log(e.bubbles);
+    },false);
+    
+
+    green.addEventListener("mousemove",function(e){
+        console.log(e.key);
+    },false);
+</script>
+</body>
+</html>

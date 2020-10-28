@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #freelyFalling{
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+            border-radius: 50%;
+            position: absolute;
+        }
+        button{
+            position: relative;
+            left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="freelyFalling"></div>
+    <script>
+        var freelyFalling = document.getElementById("freelyFalling");
+        var btn = document.querySelector("button");
+        
+        starmove();
+        
+       function starmove(){
+            const g = 9.8;
+            var speed = 0;
+            var Time;
+            Time = setInterval(function(){
+                speed += g;
+                var divY = freelyFalling.offsetTop + speed;
+
+                if(divY > document.documentElement.clientHeight - freelyFalling.offsetHeight){
+                    divY = document.documentElement.clientHeight - freelyFalling.offsetHeight;
+                    speed *= -1;
+                    speed *= 4/5;
+                }
+                freelyFalling.style.top = divY + 'px';
+            },50);
+        }
+
+            
+    </script>
+</body>
+</html>

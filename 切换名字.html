@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="开始" id="begin">
+    <input type="button" value="结束" id="finish">
+    <p></p>
+
+    <script>
+        // 设置数组
+        var nameArr = ['Tom','Mike','Jordan','Kobe','James'];
+        var adjectiveArr = ['cute','strong','small','beautiful'];
+
+        // 获取p
+        var p = document.querySelector('p');
+        var begin = document.getElementById("begin");
+        var finish = document.getElementById("finish");
+        var timer = 0;
+        begin.onclick = function(){
+            clearInterval(timer);
+            timer = setInterval(fn1,100);
+        }
+
+        function fn1(){
+            var ran1 = ~~(Math.random()*nameArr.length);
+            var ran2 = ~~(Math.random()*adjectiveArr.length);
+            p.innerHTML = adjectiveArr[ran2] + nameArr[ran1];
+        }
+
+        finish.onclick = function(){
+            if(timer){
+                clearInterval(timer);
+                timer = 0;
+            }
+        }
+    </script>
+</body>
+</html>

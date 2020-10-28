@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #counter{
+            width: 300px;
+            height: 400px;
+            background-color: rgb(0, 0, 0, .2);
+            border-radius: 15px;
+            position: fixed;
+            top: 0px;
+            left: 42%;
+        }
+        #list{
+            width: 200px;
+            height: 30px;
+            margin: 30px auto;
+            background-color: seashell;
+            list-style: none;
+        }
+        #counter>button{
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">
+        <li id="list"></li>
+        <button id="button7">7</button>
+        <button id="button8">8</button>
+        <button id="button9">9</button>
+        <button id="add">+</button>
+        <button id="button6">6</button>
+        <button id="button5">5</button>
+        <button id="button4">4</button>
+        <button id="lose">-</button>
+        <button id="button3">3</button>
+        <button id="button2">2</button>
+        <button id="button1">1</button>
+        <button id="ride">*</button>
+        <button id="del">C</button>
+        <button id="button0">0</button>
+        <button id="equalSign">=</button>
+        <button id="divide">/</button>
+    </div>
+    <script>
+        // 获取input button
+    var list = document.getElementById('list');
+    var button0 = document.getElementById('button0');
+    var button1 = document.getElementById('button1');
+    var button2 = document.getElementById('button2');
+    var button3 = document.getElementById('button3');
+    var button4 = document.getElementById('button4');
+    var button5 = document.getElementById('button5');
+    var button6 = document.getElementById('button6');
+    var button7 = document.getElementById('button7');
+    var button8 = document.getElementById('button8');
+    var button9 = document.getElementById('button9');
+    var del = document.getElementById('del');
+    var add = document.getElementById('add');
+    var divide = document.getElementById('divide');
+    var lose = document.getElementById('lose');
+    var ride = document.getElementById('ride');
+    var equalSign = document.getElementById('equalSign');
+    
+    var numberArr = [0,1,2,3,4,5,6,7,8,9,'+','-','*','/'];
+    var buttonArr = [button0,button1,button2,button3,button4,button5,button6,button7,button8,button9,add,lose,ride,divide];
+    var countArr = [];
+    for (let i = 0; i < numberArr.length; i++) {
+        buttonArr[i].onclick = function(){
+            list.innerHTML = numberArr[i];
+            countArr.push(list.innerHTML);
+        }
+    }
+
+    equalSign.onclick = function(){
+        if(countArr[1] == '+'){
+            list.innerHTML = (parseInt(countArr[0]) + parseInt(countArr[2]));
+        }
+        if(countArr[1] == '-'){
+            list.innerHTML = (parseInt(countArr[0]) - parseInt(countArr[2]));
+        }
+        if(countArr[1] == '*'){
+            list.innerHTML = (parseInt(countArr[0]) * parseInt(countArr[2]));
+        }
+        if(countArr[1] == '/'){
+            list.innerHTML = (parseInt(countArr[0]) / parseInt(countArr[2]));
+        }
+    }
+
+    del.onclick = function(){
+        list.innerHTML = null;
+        countArr = [];
+    }
+    
+    
+    </script>
+</body>
+</html>

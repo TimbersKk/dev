@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr > td{
+            border: 1px solid black;
+            text-align: center;
+        }
+        tr > th{
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>产品名称</th>
+            <th>产品单价</th>
+            <th>产品数量</th>
+            <th>产品总价</th>
+        </tr>
+        <tr>
+            <td>iphone7</td>
+            <td>700</td>
+            <td>
+                <input type="button" value="-" onclick="minus(this)">
+                <span>1</span>
+                <input type="button" value="+" onclick="add(this)">
+            </td>
+            <td>700</td>
+        </tr>
+        <tr>
+            <td>iphone6</td>
+            <td>600</td>
+            <td>
+                <input type="button" value="-" onclick="minus(this)">
+                <span>1</span>
+                <input type="button" value="+" onclick="add(this)">
+            </td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>iphone5</td>
+            <td>500</td>
+            <td>
+                <input type="button" value="-" onclick="minus(this)">
+                <span>1</span>
+                <input type="button" value="+" onclick="add(this)">
+            </td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td colspan="3">total</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        function add(obj){
+            var num = Number(obj.previousElementSibling.innerHTML);
+            num++;
+            obj.previousElementSibling.innerHTML = num;
+            var price = parseInt(obj.parentElement.previousElementSibling.innerHTML);
+            var total = num*price;
+            obj.parentElement.nextElementSibling.innerHTML = total;
+        }
+        function minus(obj){
+            var num = Number(obj.nextElementSibling.innerHTML);
+            if(num>1)
+            num--;
+            obj.nextElementSibling.innerHTML = num;
+            var price = parseInt(obj.parentElement.previousElementSibling.innerHTML);
+            var total = num*price;
+            obj.parentElement.nextElementSibling.innerHTML = total;
+        }
+
+        
+    </script>
+</body>
+</html>

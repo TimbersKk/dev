@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        height: 1000px;
+        }
+        li{
+            background-color: brown;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <a href="http:/www.baidu.com" id="a">百度一下</a>
+    <script>
+        document.body.onclick = function(e){
+            console.log("clientX-Y:" + e.clientX + "-" + e.clientY);
+            console.log("pageX-Y:" + e.pageX + "-" + e.pageY);
+            console.log("offsetX-Y:" + e.offsetX + "-" + e.offsetY);
+            console.log("screenX-Y:" + e.screenX + "-" + e.screenY);
+        }
+
+        var ul = document.getElementsByTagName("ul")[0];
+
+        ul.onclick = function(E){
+            E = E || window.event;
+            console.log(E.target || E.srcElement);
+            console.log(E.currentTarget);
+        }
+
+
+        var link =  document.getElementById("a");
+        link.onclick = function(e){
+            e = e || window.event;
+            e.preventDefault() ? e.preventDefault : (returnValue = false);
+        }
+
+        document.oncontextmenu = function(e){
+            e = e || window.event;
+            e.preventDefault() ? e.preventDefault : (returnValue = false);
+        }
+    </script>
+</body>
+</html>

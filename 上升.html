@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 1px;
+            height: 2000px;
+            background-color: rgb(95, 3, 3);
+            overflow: hidden;
+        }
+        button{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <button id="btn1">迅速上升</button>
+    <button id="btn2">缓慢上升</button>
+
+    <script>
+        var box = document.getElementById("box");
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+
+
+        btn1.onclick = function(e){
+            e = e || e.event;
+
+            var bd = document.documentElement || document.body;
+            bd.scrollTop = 0;
+        }
+
+        const BACKTIME = 80;
+        var timer;
+        btn2.onclick = function(){
+            return  timer = setInterval(time,BACKTIME);
+        }
+
+        function time () {
+            var bd = document.documentElement || document.body;
+            bd.scrollTop -= 50;
+            if(bd.scrollTop == 0){
+                clearInterval(timer);
+            }
+        }
+    </script>
+</body>
+</html>              
